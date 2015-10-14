@@ -100,12 +100,9 @@ def buildCoder(shift):
     returns: dict
     """
     dict = {}
-    upper = string.ascii_uppercase
-    lower = string.ascii_lowercase
-    for l in range(len(upper)):
-        dict[upper[l]] = upper[(l+shift)%len(upper)]
-    for l in range(len(lower)):
-        dict[lower[l]] = lower[(l+shift)%len(lower)]
+    abc = string.ascii_uppercase+string.ascii_lowercase
+    for l in range(len(abc)):
+        dict[abc[l]] = abc[(l+shift)%len(abc)]
     return dict
     
 print buildCoder(3)
